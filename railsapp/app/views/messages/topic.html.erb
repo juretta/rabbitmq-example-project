@@ -1,0 +1,61 @@
+<div class="row">
+	<div class="column grid_6">
+		<div class="row">
+			<div class="column">
+				<% form_for :stock, :url => {:action => :topic_send} do |f|%>
+				<p>
+					Sendet eine JSON Nachricht an den Topic Exchange <strong>stocks</strong>.
+				</p>
+
+				<div class="row">
+					<div class="column grid_4">
+						<%= f.label :stock, 'Stock' %>
+					</div>
+					<div class="column grid_2">
+						<%= f.label :amount, 'Amount' %>
+					</div>
+				</div>
+		
+				<div class="row">
+					<div class="column grid_4">
+						<%= f.select :stock, @stocks %>
+					</div>
+					<div class="column grid_2">
+						<%= f.select :amount, (1..10) %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column grid_4">
+						<p><%= f.submit "Send message" %></p>
+					</div>
+				</div>
+				<% end %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<p>
+					Um die in diesem Beispiel gesendeten Messages zu empfangen bitte die
+					Consumer <code>cli/topic-01/consumer-*.rb</code> ausführen.
+<pre>
+cd ./rabbitmq-examples/cli/topic-01
+ ruby consumer-de-stocks.rb
+I, [2009-10-17T16:12:38.947540 #13538]  INFO \
+  -- : Consumer consumer-de-stocks.rb starting...
+</pre>
+
+<pre>
+cd ./rabbitmq-examples/cli/topic-01
+ ruby consumer-us-stocks.rb
+I, [2009-10-17T16:12:38.947540 #13538]  INFO \
+  -- : Consumer consumer-us-stocks.rb starting...
+</pre>
+				</p>
+			</div>
+		</div>
+		
+	</div>
+	<div class="column grid_6">
+		<img src="/images/topic.png" width="384" height="708" alt="Topic Example" />
+	</div>
+</div>

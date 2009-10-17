@@ -1,0 +1,111 @@
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	color: #000;
+}
+
+.flash {
+	background-color: yellow;
+    color: #444;
+	padding: 1em;
+}
+
+a.button {
+    background: transparent url(../images/bg_button_a.gif) no-repeat scroll top right;
+    color: #444;
+    display: block;
+    float: left;
+    font: normal 12px arial, sans-serif;
+    height: 24px;
+    margin-right: 6px;
+    padding-right: 18px; /* sliding doors padding */
+    text-decoration: none;
+}
+
+a.button span {
+    background: transparent url(../images/bg_button_span.gif) no-repeat;
+    display: block;
+    line-height: 14px;
+    padding: 5px 0 5px 18px;
+}
+
+a.button:active {
+    background-position: bottom right;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+a.button:active span {
+    background-position: bottom left;
+    padding: 6px 0 4px 18px; /* push text down 1px */
+}
+
+#menu {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 15px 10px;
+	height: 30px;
+	border-bottom: 1px solid #444;
+}
+
+#menu ul li {
+	float: left;
+	width: 100px;
+}
+
+#content {
+	clear: left;
+}
+
+pre {
+	background-color: #000;
+	color: #FFF;	
+	padding: 6px;
+	border: 3px solid #CCC;
+	white-space: pre;
+	margin: 10px 0;
+	line-height: 1.2em;
+}
+
+/* ================ */
+/* = The 1Kb Grid = */     /* 12 columns, 60 pixels each, with 20 pixel gutter */
+/* ================ */
+
+.grid_1 { width:60px; }
+.grid_2 { width:140px; }
+.grid_3 { width:220px; }
+.grid_4 { width:300px; }
+.grid_5 { width:380px; }
+.grid_6 { width:460px; }
+.grid_7 { width:540px; }
+.grid_8 { width:620px; }
+.grid_9 { width:700px; }
+.grid_10 { width:780px; }
+.grid_11 { width:860px; }
+.grid_12 { width:940px; }
+
+.column {
+	margin: 0 10px;
+	overflow: hidden;
+	float: left;
+	display: inline;
+}
+.row {
+	width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.row .row {
+	margin: 0 -10px;
+	width: auto;
+	display: inline-block;
+}

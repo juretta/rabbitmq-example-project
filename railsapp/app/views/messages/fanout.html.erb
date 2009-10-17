@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="column grid_6">
+		<div class="row">
+			<div class="column">
+				<p>
+					Sendet eine Nachricht mit JSON enkodiertem Body an den <strong>alerts</strong> Fanout Exchange.
+				</p>
+				<%= link_to "<span>Send message</span>", {:action => "fanout_send"}, :class => "button", :method => :post %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<p>
+					Um die in diesem Beispiel gesendeten Messages zu empfangen bitte die
+					Consumer <code>cli/fanout-01/consumer*.rb</code> ausführen.
+<pre>
+cd ./rabbitmq-examples/cli/fanout-01
+ruby consumer-01.rb 
+I, [2009-10-17T16:12:38.947540 #13538]  INFO \
+  -- : Consumer consumer-01.rb starting...
+</pre>
+
+<pre>
+cd ./rabbitmq-examples/cli/fanout-01
+ruby consumer-02.rb 
+I, [2009-10-17T16:12:38.947540 #13538]  INFO \
+  -- : Consumer consumer-02.rb starting...
+</pre>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="column grid_6">
+		<img src="/images/fanout.png" width="320" height="614" alt="Fanout Example" />
+	</div>
+</div>

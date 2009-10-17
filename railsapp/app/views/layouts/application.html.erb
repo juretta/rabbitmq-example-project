@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="MSSmartTagsPreventParsing" content="true" /> 
+    <%= stylesheet_link_tag 'screen.css' %>
+    <title>RabbitMQ example</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="menu">
+			<ul>
+				<li><%= link_to "Queue", :action => :queue %></li>
+				<li><%= link_to "Topic", :action => :topic %></li>
+				<li><%= link_to "Fanout", :action => :fanout %></li>
+			</ul>	
+			<div class="clear"><!-- // --></div>			
+		</div>
+		<div id="content">
+			<div class="row">
+				<div class="column grid_12">
+			        <% [:notice, :warn, :error].each do |level|%>    
+			            <% if flash[level]%>
+			                <p class="flash"><%= flash[level] %></p>
+			            <% end %>
+			        <% end %>
+				</div>
+			</div>
+			<%= yield %>
+		</div>
+	</div>
+</body>
+</html>

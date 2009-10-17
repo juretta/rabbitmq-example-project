@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="column grid_5">
+		<div class="row">
+			<div class="column">
+				<p>
+					Sendet eine Nachricht mit JSON enkodiertem Body an den <strong>amq.direct</strong> Direct Exchange mit dem 
+					Routing Key <strong>orders</strong>.
+				</p>
+				<%= link_to "<span>Send message</span>", {:action => "queue_send"}, :class => "button", :method => :post %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<p>
+					Um die in diesem Beispiel gesendeten Messages zu empfangen bitte den
+					Consumer <code>cli/queue-direct-02/consumer_ack.rb</code> ausführen.
+<pre>
+cd ./rabbitmq-examples/cli/queue-direct-02
+ruby consumer_ack.rb 
+I, [2009-10-17T16:12:38.947540 #13538]  INFO \
+  -- : Consumer consumer_ack.rb starting...
+</pre>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="column grid_7">
+		<img src="/images/queue.png" width="520" height="619" alt="Queue Example" />
+	</div>
+</div>
