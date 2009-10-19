@@ -38,7 +38,14 @@ versenden (Producer):
 * fanout-01 (Consumer für das Rails-Beispiel 'Fanout'):
 	* consumer-01.rb: Deklariert die Queue 'log-alerts' und erzeugt ein Fanout Binding für den Exchange 'alerts'.
 	* consumer-02.rb: Deklariert die Queue 'save-alerts' und erzeugt ein Fanout Binding für den Exchange 'alerts'.
-
+    * consumer-03.rb: Deklariert die Queue 'monitor-alerts' und erzeugt ein Fanout Binding für den Exchange 'alerts'.
+      Die Queue wird mit der Option 'auto-delete' deklariert. Nachdem sich der letzte Consumer dieser Queue
+      abgemeldet hat, wird diese Queue und das zugehörige Binding von RabbitMQ automatisch gelöscht.
+ 	  Dies ist beispielsweise nützlich um eingehende Nachrichten auszugeben so lange der Consumer
+	  konnektiert ist, Nachrichten aber zu ignorieren wenn der Consumer nicht verbunden ist.
+	  Im Gegensatz zu der Queue 'monitor-alerts' werden eintreffende Nachrichten an die Queues 'log-alerts' und
+	  'save-alerts' weitergeleitet auch wenn kein Consumer verbunden ist. Sobald sich ein Consumer für diese
+	  Queues anmeldet werde die zwischenzeitlich aufgelaufenen Nachrichten ausgeliefert.
 
 Das 'rabbit-tools' gem installiert den Befehl 'rabbitstatus' der eine übersichtliche Auflistung der RabbitMQ 
 queues, exchanges, bindings und connections ausgibt:

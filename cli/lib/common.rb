@@ -34,6 +34,18 @@ module MQExample
   end
 end
 
+class Array
+  def shuffle!
+    n = size
+    until n == 0
+      k = Kernel.rand(n)
+      n = n - 1
+      self[n], self[k] = self[k], self[n]
+    end
+    self
+  end
+end
+
 # =============== Logging initialisieren ===============
 LOGGER = Logger.new(STDOUT)
 LOGGER.level = Logger::INFO
