@@ -1,6 +1,8 @@
 Beispiele
 =========
 
+! Eine aktuelle Version des Beispiels findet sich hier: [http://github.com/juretta/rabbitmq-example-project](http://github.com/juretta/rabbitmq-example-project) !
+
 Es werden die folgenden Bibliotheken benötigt:
 
 	* tmm1-amqp 0.6.4: [sudo] gem install --source http://gems.github.com tmm1-amqp
